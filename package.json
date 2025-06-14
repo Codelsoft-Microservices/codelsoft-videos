@@ -4,13 +4,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "seed": "node src/database/seeders/seeder.js",
-    "generate": "",
-    "reset": "",
-    "migrate": "",
-    "deploy": "",
-    "studio": "",
-    "initdb": "npm run migrate && npm run seed"
+    "seed": "node src/database/seeders/seeder.js"
   },
   "dependencies": {
     "@faker-js/faker": "^9.8.0",
