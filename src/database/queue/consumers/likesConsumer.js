@@ -1,9 +1,9 @@
 import { getChannel } from '../config/connection.js';
-import { Video } from '../../../database/models/video/videoModel.js';
+import { Video } from '../../../database/models/videoModel.js';
 
 const VIDEO_LIKE_QUEUE = 'video-liked-queue';
 
-export const startVideoLikeConsumer = async () => {
+const startVideoLikeConsumer = async () => {
   const channel = await getChannel();
 
   await channel.assertQueue(VIDEO_LIKE_QUEUE, { durable: true });
@@ -35,3 +35,5 @@ export const startVideoLikeConsumer = async () => {
     }
   });
 };
+
+export default startVideoLikeConsumer

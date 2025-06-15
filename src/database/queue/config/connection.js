@@ -6,7 +6,10 @@ const QUEUE_NAME = "video-liked-queue";
 
 async function connectToRabbitMQ() {
   try {
-    const connection = await amqplib.connect(process.env.RABBITMQ_URL);
+    const RABBITMQ = process.env.RABBITMQ_URL 
+      .replace("<PASSWORD>",process.env.RABBITMQ_PASSWORD)
+      .replace("<USER>", process.env.RABBITMQ_USER);
+    const connection = await amqplib.connect(RABBITMQ);
     channel = await connection.createChannel();
 
     await channel.assertQueue(QUEUE_NAME, { durable: true });

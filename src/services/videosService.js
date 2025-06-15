@@ -23,6 +23,14 @@ const UploadVideo = catchAsync(async (call, callback) => {
             description,
             genre
     });
+
+    await videoCretionEvent({
+        uuid: newVideo.uuid,
+        title: newVideo.title,
+        description: newVideo.description,
+        likes: newVideo.likes,
+    });
+
     return callback(null, { 
         message: "Video creado", 
         video: {
