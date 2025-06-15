@@ -1,5 +1,4 @@
 import { config } from 'dotenv';
-import { connect } from 'mongoose';
 import { ServerCredentials, Server } from '@grpc/grpc-js';
 import { loadProto } from './src/utils/loadProto.js';
 import videoService from './src/services/videosService.js';
