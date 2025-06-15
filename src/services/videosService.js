@@ -12,7 +12,6 @@ const VideoCheck = catchAsync(async (callback) => {
 const UploadVideo = catchAsync(async (call, callback) => {
     const { title, description, genre } = call.request;
     // Verifica si se han proporcionado todos los datos necesarios
-    console.log(title, description, genre);
     if (!title || !description || !genre) {
         return callback({
             code: status.INVALID_ARGUMENT,
@@ -153,13 +152,14 @@ const ListVideos = catchAsync(async (call, callback) => {
     }
 
     return callback(null, {
+        message: "Videos encontrados",
         videos: videos.map(v => ({
             uuid: v.uuid,
             title: v.title,
             description: v.description,
             likes: v.likes,
             genre: v.genre,
-            deleted: v.deleted
+            deleted: v.deleted,
         }))
     });
 

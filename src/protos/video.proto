@@ -46,12 +46,14 @@ message Video {
   bool deleted = 6;
 }
 
-message ListVideosResponse {
-  repeated Video videos = 1;
+message VideoResponse {
+  string message = 1;
+  Video video = 2;
 }
 
-message VideoResponse {
-  Video video = 1;
+message ListVideosResponse {
+  string message = 1;
+  repeated Video videos = 2;
 }
 
 message Empty {}
