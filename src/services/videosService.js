@@ -3,7 +3,7 @@ import { status } from "@grpc/grpc-js";
 import  catchAsync from "../utils/catchAsync.js";
 
 /*Metodo de prueba*/
-const VideoCheck = catchAsync(async (callback) => {
+const VideoCheck = catchAsync(async (call, callback) => {
     return callback(null, {
         message: "El servicio de videos está funcionando",
     });
